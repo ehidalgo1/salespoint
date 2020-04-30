@@ -1,43 +1,37 @@
 $(document).ready(function(){
-
     $('#tabla-productos').DataTable();
-    cargarTablaProductos();
-
+    llenarTablaInventario();
 });
 
+function llenarTablaInventario(){
 
-
-function cargarTablaProductos(){
-    fetch('/api/inventario')
+    fetch('/api/producto')
     .then(res => res.json())
     .then(array => {
 
         let tabla = $('#tabla-productos').DataTable();
         tabla.clear().draw();
-        let spanStock;
-        let porcentaje = 0;
-        let colorSpan = "success";
 
         array.map(function(item,i){
 
-            porcentaje = item.stockActual * 100 / item.stockPromedio
-
-            if(porcentaje<65 && porcentaje>25){
-                colorSpan = "warning";
-            }else if(porcentaje<25){
-                colorSpan = "danger";
-            }
-            
-
-            spanStock = `<span class="badge badge-pill badge-${colorSpan}">${item.stockActual}</span>`;
-
             tabla.row.add([
-                i, item.producto.nombre, item.producto.familiaProducto.nombre, spanStock, item.stockPromedio, item.stockVentas, "nada"
+                i+1,item.nombre, item.familiaProducto.nombre,""
+
             ]).draw(false);
 
         });
+
     })
-    .catch(error =>{
+    .catch(error => {
         console.log(error);
     })
+
 };
+
+
+//accion abrir modal
+$('#btn-agregar').click(function(){
+
+    $('#modal-agregar').modal('show');
+
+});

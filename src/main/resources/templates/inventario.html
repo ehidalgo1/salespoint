@@ -40,17 +40,20 @@
 									</div>
 									<h5>Productos</h5>
 									<div class="btn-add">
-									<button id="btn-agregar" class="btn btn-primary">Agregar</button>
+									<button class="btn btn-primary">Agregar</button>
 									</div>
 								</header>
 								<div id="collapse4" class="body">
-									<table id="tabla-productos"
+									<table id="tabla-inventario"
 										class="table table-bordered table-condensed table-hover table-striped">
 										<thead>
 											<tr>
 												<th>#</th>
 												<th>Producto</th>
 												<th>Tipo</th>
+												<th>Stock actual</th>
+												<th>Stock promedio</th>
+												<th>Stock ventas</th>
 												<th>Opciones</th>
 											</tr>
 										</thead>
@@ -78,32 +81,22 @@
 
 
 	<!-- #helpModal -->
-	<div id="modal-agregar" class="modal fade">
+	<div id="helpModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Agregar producto</h4>
+					<h4 class="modal-title">Modal title</h4>
 				</div>
 				<div class="modal-body">
-					<form id="form-agregar" method="post">
-					<div class="form-group">
-						<label for="nombre">Nombre</label>
-						<input type="text" name="nombre" id="nombre" class="form-control">
-					</div>
-					<div class="form-group">
-						<label for="tipo">Tipo</label>
-						<select name="select-tipo" id="select-productos" class="form-control">
-							<option value="">Seleccione</option>
-							<option th:each="item : ${listaFamilia}" th:value="${item.idFamilia}" th:text="${item.nombre}"></option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label for=""></label>
-
-					</div>
-					</form>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+						nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+						reprehenderit in voluptate velit esse cillum dolore eu fugiat
+						nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+						sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -142,7 +135,7 @@
 
 
 	<!-- JS -->
-	<script src="js/productos.js"></script>
+	<script src="js/inventario.js"></script>
 
 
 </body>
