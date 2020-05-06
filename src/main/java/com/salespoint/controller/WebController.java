@@ -50,4 +50,8 @@ public class WebController {
 		return "inventario";
 	}
 	
+	@RequestMapping("/facturas")
+	public String goFacturas() {
+		return "facturas";
+	}
 }
