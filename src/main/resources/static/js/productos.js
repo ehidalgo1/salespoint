@@ -38,6 +38,7 @@ function llenarTablaProductos(){
 //accion abrir modal
 $('#btn-agregar').click(function(){
 
+    $('#form-agregar').trigger('reset');
     $('.modal-title').text('Agregar Producto');
     $('#btn-editar-producto').remove();
     btnAgregar = `<input id="btn-agregar-producto" onclick="agregarProducto()" type="submit" class="btn btn-primary" value="Agregar">`;

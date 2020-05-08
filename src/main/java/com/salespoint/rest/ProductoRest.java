@@ -117,7 +117,7 @@ public class ProductoRest {
 			
 			if (producto!=null && familia!=null) {
 				
-				producto.setNombre(prod.getNombre());
+				producto.setNombre(prod.getNombre().toUpperCase());
 				producto.setFamiliaProducto(familia);
 				
 				productDAO.BD().save(producto);
